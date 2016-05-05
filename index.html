@@ -3,6 +3,31 @@
 <script src="https://fb.me/react-dom-15.0.2.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 </head>
 <body>
 </body> 
+
+<script type="text/jsx"> 
+// define a react component class 
+// must always provide valid object with render method
+var Badge = React.createClass({
+  render: function(){
+  return <button class="btn btn-primary" type="button">
+      Messages <span class="badge">4</span>
+    </button>
+  }
+}); 
+
+// Ask react to render this class,,, think of it as an instance
+var element = React.createElement(Badge); 
+
+// When we ask to render class, we tell it
+// where to put render element in the DOM 
+//first arg is instance of class we want to render
+//second arg is where we want to RENDER IT TO
+ReactDOM.render(element, document.body); 
+
+</script> 

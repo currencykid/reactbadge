@@ -15,14 +15,23 @@
 // must always provide valid object with render method
 var Badge = React.createClass({
   render: function(){
-  return <button class="btn btn-primary" type="button">
-      Messages <span class="badge">4</span>
+  return <button className="btn btn-primary" type="button">
+      {this.props.title} <span className="badge">{this.props.number}</span>
     </button>
   }
 }); 
 
-// Ask react to render this class,,, think of it as an instance
-var element = React.createElement(Badge); 
+// step 1 add the this.props in the createClass as we did aboe
+//step 2 create options object ,, passed inside render function,, its what props is inside the component
+
+var options = {
+  title: 'Inbox',
+  number: '32' 
+};
+
+// Ask react to render this class,,, think of it as creating an instance
+// pass in object as second argument..
+var element = React.createElement(Badge, options); 
 
 // When we ask to render class, we tell it
 // where to put render element in the DOM 
